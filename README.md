@@ -49,5 +49,4 @@ iproute2
 tc
 Vulnerable kernel
 Isolated testing environment
-
-[![PEDIT COW — Exploitation Demonstration](pedit.png)](pedit.mp4)
+[![PEDIT COW — Exploitation ] ](pedit.gif)
