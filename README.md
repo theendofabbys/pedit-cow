@@ -20,46 +20,34 @@ The vulnerability involves an interaction between Linux traffic control mechanis
 
 The PoC demonstrates the following general exploitation chain:
 
-```text
-SUID Enumeration
-       │
-       ▼
-Target Selection
-       │
-       ▼
-ELF Entry Point Detection
-       │
-       ▼
-tc / Netlink / pedit
-       │
-       ▼
-Page Cache Corruption
-       │
-       ▼
-Corruption Verification
-       │
-       ▼
-SUID Binary Execution
-       │
-       ▼
-Elevated Privileges
 
 
----
+Proof of Concept
 
-## Exploitation Demonstration
+The main PoC is implemented in C.
 
-The following video demonstrates the PoC execution in a controlled environment.
+Project Structure
+pedit_cow/
+├── exploit.c
+├── compiled/
+│   └── exploit
+├── pedit.png
+├── pedit.mp4
+└── README.md
+Source
+
+exploit.c contains the PoC source code.
+
+Compiled Binary
+
+compiled/exploit contains a pre-compiled PoC binary.
+
+Requirements
+Linux x86_64
+GCC
+iproute2
+tc
+Vulnerable kernel
+Isolated testing environment
 
 [![PEDIT COW — Exploitation Demonstration](pedit.png)](pedit.mp4)
-
----
-
-## Mitigation
-
-The recommended mitigation is to update the Linux kernel to a version containing the appropriate security fix.
-
-Check the currently running kernel:
-
-```bash
-uname -r
