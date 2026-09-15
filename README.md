@@ -43,3 +43,23 @@ SUID Binary Execution
        │
        ▼
 Elevated Privileges
+
+
+---
+
+## Exploitation Demonstration
+
+The following video demonstrates the PoC execution in a controlled environment.
+
+[![PEDIT COW — Exploitation Demonstration](pedit.png)](pedit.mp4)
+
+---
+
+## Mitigation
+
+The recommended mitigation is to update the Linux kernel to a version containing the appropriate security fix.
+
+Check the currently running kernel:
+
+```bash
+uname -r
